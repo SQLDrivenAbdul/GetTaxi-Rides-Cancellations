@@ -107,7 +107,13 @@ FROM Getti_cancellations
 GROUP BY  order_status,driver_assignment_status
 ```
 #### Query Output
-![GetTaxi EDA](getti3.PNG)
+![GetTaxi EDA](getti4.PNG)
+
+4496 of orders cancelled by customers were done before a driver could be assigned while the remaining  2811 of them has been assigned to a driver before cancellation.
+
+### But 🤔,Why were they cancelled after a driver has been assigned? 
+
+For those records, the query reveals that the minimum time for the ride to get to the customer 1 hour, the maximum approximately 26 hours  which could be a redflag depending on how in hurry a client is to get to his/her destination.
 
 
 

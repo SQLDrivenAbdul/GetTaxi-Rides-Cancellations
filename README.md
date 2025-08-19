@@ -86,3 +86,14 @@ SELECT
 FROM Getti_cancellations
 GROUP BY  ROLLUP(order_status)
 ```
+
+#### Query Output
+![GetTaxi EDA](gettaxi_eda.PNG)
+
+The query reveals that most of the cancelled orders were by the customers; they cancelled 7,307  out of the 10,716 and the remaining 3409 were by the company system.
+
+
+#### But,Do they cancel before or after a driver has been assigned? 🤔
+
+
+

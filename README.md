@@ -1,15 +1,16 @@
 # GetTaxi-Rides-Cancellations
-
+ 
+&nbsp;
 
 ## Project Overview
 <p align="justify">
 Gett, previously known as GetTaxi, is an Israeli-developed technology platform solely focused on corporate Ground Transportation Management (GTM). They have an application where clients can order taxis, and drivers can accept their rides (offers). At the moment, when the client clicks the Order button in the application, the matching system searches for the most relevant drivers and offers them the order. In this task, i investigated some matching metrics for orders that were not completed successfully, i.e., the customer didn't end up getting a car.
 </p>
-
+  
+&nbsp;
 
 ## Data Source
 These Datasets were gotten from Stratascatch, a platform for solving Data Science problems. The platform provided two tables data_orders and data_offers
-
 
 ### 📖 Data Dictionary — data_orders  
 
@@ -26,7 +27,7 @@ These Datasets were gotten from Stratascatch, a platform for solving Data Scienc
 
 
 
-
+&nbsp; 
 ### 📖 Data Dictionary — data_offers  
 
 | **Column Name**              | **Description**                                                                 |
@@ -34,6 +35,11 @@ These Datasets were gotten from Stratascatch, a platform for solving Data Scienc
 | `order_gk`                   |Order number, associated with the same column from the `data_orders` dataset                                                |
 | `offer_id`                   |  Unique identifier of an offer                                                  |
 
+
+&nbsp; 
+
+### Tools
+- SQL Server : Data cleaning, manipulation and analysis
 
 
 

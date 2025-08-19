@@ -22,7 +22,7 @@ These Datasets were gotten from Stratascatch, a platform for solving Data Scienc
 | `origin_latitude`            | Latitude of the customer’s pickup location                                       |
 | `m_order_eta`                | Estimated time of arrival for driver to reach the customer (in minutes)          |
 | `cancellations_time_in_seconds` | Time (in seconds) before cancellation occurred after order placement          |
-| `order_status_key`           | Status code of the order (e.g., completed, cancelled)                            |
+| `order_status_key`           | Status code of the order: 4 - cancelled by client, 9 - cancelled by system, i.e., a reject)                            |
 | `is_driver_assigned_key`     | Indicates whether a driver was assigned (1 = Yes, 0 = No)                        |
 
 
@@ -41,6 +41,38 @@ These Datasets were gotten from Stratascatch, a platform for solving Data Scienc
 ### Tools
 - SQL Server : Data cleaning, manipulation and analysis
 
+&nbsp; 
+
+### Tasks
+- Build up distribution of orders according to reasons for failure: cancellations before and after driver assignment, and reasons for order rejection. Analyse the resulting plot. Which category has the highest number of orders?
+- Plot the distribution of failed orders by hours. Is there a trend that certain hours have an abnormally high proportion of one category or another? What hours are the biggest fails? How can this be explained?
+- Plot the average time to cancellation with and without driver, by the hour. If there are any outliers in the data, it would be better to remove them. Can we draw any conclusions from this plot?
+- Plot the distribution of average ETA by hours. How can this plot be explained?
+
+&nbsp; 
+
+### Data Cleaning and Preparation
+
+```sql
+CREATE VIEW Getti_cancellations AS 
+SELECT
+    order_gk,
+    order_datetime,
+    origin_longitude,
+    origin_latitude,
+    m_order_eta,
+    cancellations_time_in_seconds,
+    CASE WHEN order_status_key = 4 THEN 'cancelled by client'
+         WHEN order_status_key = 9 THEN 'cancelled by system'
+    END AS order_status,
+    CASE WHEN is_driver_assigned_key = 1 THEN 'yes'
+         WHEN is_driver_assigned_key = 0 THEN 'no'
+    END AS driver_assignment_status
+  FROM 
+    data_orders
+  ```
+I created a view to select that attributes I needed from the dataset and simplified the values in the `order_status_key` and `is_driver_assigned_key` columns by replacing numeric codes (such as 4, 9, 1, and 0) with more meaningful text labels.
+    
 
 
 

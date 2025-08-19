@@ -86,5 +86,3 @@ SELECT
 FROM Getti_cancellations
 GROUP BY  ROLLUP(order_status)
 ```
-
-

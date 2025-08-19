@@ -71,7 +71,9 @@ SELECT
   FROM 
     data_orders
   ```
+<p align="justify">
 I created a view to select that attributes I needed from the dataset and simplified the values in the `order_status_key` and `is_driver_assigned_key` columns by replacing numeric codes (such as 4, 9, 1, and 0) with more meaningful text labels.
+</p>
     
 
 

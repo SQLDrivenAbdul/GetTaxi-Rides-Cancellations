@@ -76,5 +76,15 @@ I created a view to select that attributes I needed from the dataset and simplif
 </p>
     
 
+### Exploratory Data Analysis
+
+```sql
+
+SELECT
+  ISNULL(order_status,'Total') AS order_status,
+  COUNT(order_gk) AS orders
+FROM Getti_cancellations
+GROUP BY  ROLLUP(order_status)
+```
 
 

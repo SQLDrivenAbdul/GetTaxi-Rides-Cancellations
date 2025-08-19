@@ -113,7 +113,7 @@ GROUP BY  order_status,driver_assignment_status
 
 ### But 🤔,Why were they cancelled after a driver has been assigned? 
 
-For those records, the query reveals that the minimum time for the ride to get to the customer 1 hour, the maximum approximately 26 hours  which could be a redflag depending on how in hurry a client is to get to his/her destination.
+For those records, the query shows that the minimum estimated ride time to reach the customer is 1 hour, while the maximum is approximately 26 hours — which could be a red flag, especially if the client is in a hurry to reach their destination.
 
 
 

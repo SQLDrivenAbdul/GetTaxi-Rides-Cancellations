@@ -104,6 +104,8 @@ SELECT
 FROM Getti_cancellations
 GROUP BY  order_status,driver_assignment_status
 ```
+#### Query Output
+![GetTaxi EDA](gettaxi_eda2.PNG)
 
 
 

@@ -93,7 +93,17 @@ GROUP BY  ROLLUP(order_status)
 The query reveals that most of the cancelled orders were by the customers; they cancelled 7,307  out of the 10,716 and the remaining 3409 were by the company system.
 
 
-#### But,Do they cancel before or after a driver has been assigned? 🤔
+### But 🤔,Do they cancel before or after a driver has been assigned? 
+
+```sql
+SELECT
+  order_status,
+  driver_assignment_status,
+  COUNT(order_gk) AS orders,
+  AVG(m_order_eta) avg_duration2customer
+FROM Getti_cancellations
+GROUP BY  order_status,driver_assignment_status
+```
 
 
 

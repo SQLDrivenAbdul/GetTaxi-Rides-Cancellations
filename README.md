@@ -100,12 +100,14 @@ SELECT
   order_status,
   driver_assignment_status,
   COUNT(order_gk) AS orders,
-  AVG(m_order_eta) avg_duration2customer
+  AVG(m_order_eta/60) avg_duration2customer,
+  MIN(m_order_eta)/60 min_duration2customer,
+  MAX(m_order_eta)/60 max_duration2customer
 FROM Getti_cancellations
 GROUP BY  order_status,driver_assignment_status
 ```
 #### Query Output
-![GetTaxi EDA](gettaxi_eda2.PNG)
+![GetTaxi EDA](getti3.PNG)
 
 
 

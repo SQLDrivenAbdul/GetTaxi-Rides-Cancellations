@@ -134,7 +134,11 @@ WHERE order_status = 'cancelled by client' AND driver_assignment_status = 'yes'
 SELECT duration_bucket,COUNT(order_gk)
 FROM cte
 GROUP BY duration_bucket
+
 ```
+### Query Output
+![GetTaxi EDA](getti5.PNG)
+
 This query reveals that higher m_order_eta doesnt result to order cancellations.
 
 

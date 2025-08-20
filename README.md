@@ -143,3 +143,25 @@ This query reveals that higher m_order_eta doesnt result to order cancellations.
 
 
 
+### Time_series analysis
+```sql
+
+WITH cte 
+AS(SELECT 
+      order_gk,
+      DATEADD(SECOND,cancellations_time_in_seconds,order_datetime) exact_cancellation_time,
+      order_datetime,
+      cancellations_time_in_seconds
+FROM Getti_cancellations
+WHERE order_status = 'cancelled by client' AND driver_assignment_status = 'yes'
+)
+
+SELECT DATEPART(HOUR,exact_cancellation_time) hour_cancelled,
+       COUNT(order_gk) AS cancelled_orders
+FROM cte
+GROUP BY DATEPART(HOUR,exact_cancellation_time)
+ORDER BY cancelled_orders DESC
+```
+
+
+

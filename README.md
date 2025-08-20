@@ -117,3 +117,25 @@ For those records, the query shows that the minimum estimated ride time to reach
 
 
 
+### A deep_dive into the duration
+--setting a  benchmark of 10 minutes
+```sql
+WITH cte 
+AS(SELECT 
+    order_gk,
+    CEILING(m_order_eta/60) AS m_order_eta_mins,
+    CASE WHEN (m_order_eta/60) <= 10 THEN 'under 10 mins'
+         WHEN (m_order_eta/60) > 10 THEN 'above 10 mins'
+    END AS duration_bucket   
+FROM Getti_cancellations
+WHERE order_status = 'cancelled by client' AND driver_assignment_status = 'yes'
+)
+
+SELECT duration_bucket,COUNT(order_gk)
+FROM cte
+GROUP BY duration_bucket
+```
+This query reveals that higher m_order_eta doesnt result to order cancellations.
+
+
+

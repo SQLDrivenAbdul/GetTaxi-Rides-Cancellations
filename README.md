@@ -113,7 +113,7 @@ GROUP BY  order_status,driver_assignment_status
 
 ### But 🤔,Why were they cancelled after a driver has been assigned? 
 
-For those records, the query shows that the minimum estimated ride time to reach the customer is 1 minute while the maximum is approximately 26 minutes.
+For those records, the query shows that the minimum estimated ride time to reach the customer is 1 minute while the maximum is approximately 26 minutes. Orders that were assigned drivers has none of these values simply because they didnt wait get a driver at all;that's why that have nulls in those columns. 
 
 
 

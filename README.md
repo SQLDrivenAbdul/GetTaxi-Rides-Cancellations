@@ -163,5 +163,9 @@ GROUP BY DATEPART(HOUR,exact_cancellation_time)
 ORDER BY cancelled_orders DESC
 ```
 
+### Query Output
+![GetTaxi EDA](top5getti.PNG)
+
+This result shows that most of the orders cancelled were within the hours of 8 and 9 am , followed by 5 pm. This could mean that most of the customers are people in a hurry to get to their places of work and cannot withstand waiting for as long 10 minutes ,hence,will be late to  their destinations. Also,5pm is a crucial time when most customers are going home from respective places of work.
 
 

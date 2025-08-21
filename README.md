@@ -139,7 +139,7 @@ GROUP BY duration_bucket
 ### Query Output
 ![GetTaxi EDA](getti5.PNG)
 
-This query reveals that higher m_order_eta doesnt result to order cancellations.
+This query reveals that higher m_order_eta doesnt result to order cancellations as most over orders cancelled  m_order_eta are below less or equals to 10 minutes.
 
 
 
